@@ -42,7 +42,7 @@
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container justify-content-center">
-				<p class="navbar-brand fs-2 m-0">Datos Básicos</p>
+				<p class="navbar-brand fs-2 m-0">Actualizacion de Curriculum Vitae</p>
 			</div>
 		</nav>
 	</div>
@@ -52,41 +52,43 @@
 		<form action='administrar_agenda.php' method='post'>
 
 		<hr class="mt-0 mb-0 p-0">
+
+		<input type='hidden' name='id' value='<?php echo $agenda->getId()?>'>
 			
 		<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Documento</label>
 			<input type='number' class="form-control mb-2" name='documento' value="<?php echo $agenda->getDocumento() ?>" >
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Nombre</label>
+			<label style="color: #ccc; font-size: 17 ;" class="form-label">Nombre</label>
 			<input type='text' class="form-control mb-2" name='nombre' value="<?php echo $agenda->getNombre()?>" >
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Apellido</label>
+			<label style="color: #ccc; font-size: 17 ;" class="form-label">Apellido</label>
 			<input type='text' class="form-control mb-2" name='apellidos' value="<?php echo $agenda->getApellidos() ?>" >
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Direccion</label>
+			<label style="color: #ccc; font-size: 17 ;" class="form-label">Direccion</label>
 			<input type='text' class="form-control mb-2" name='direccion' value="<?php echo $agenda->getDireccion()?>" >
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Telefono</label>
+			<label style="color: #ccc; font-size: 17 ;" class="form-label">Telefono</label>
 			<input type='number' class="form-control mb-2" name='telefono' value="<?php echo $agenda->getTelefono() ?>" >
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Correo electronico</label>
+			<label  style="color: #ccc; font-size: 17 ;" class="form-label">Correo electronico</label>
 			<input type='email' class="form-control mb-2" name='correo' value="<?php echo $agenda->getCorreo() ?>">
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Fecha de nacimiento</label>
-			<input type='text' class="form-control mb-2" name='edad' value="<?php echo $agenda->getEdad() ?>" >
+			<label  style="color: #ccc; font-size: 17 ;" class="form-label">Fecha de nacimiento</label>
+			<input type='date' class="form-control mb-2" name='edad' value="<?php echo $agenda->getEdad() ?>" >
 
 			<hr class="mt-0 mb-0 p-0">
 
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Titulo</label>
-			<input type='number' class="form-control mb-2" name='documento' value="<?php echo $agenda->getTitulo() ?>" >
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Institucion educativa</label>
-			<input type='text' class="form-control mb-2" name='nombre' value="<?php echo $agenda->getInstitucion()?>" >
+			<label style="color: #ccc; font-size: 17 ;" class="form-label">Titulo</label>
+			<input type='text' class="form-control mb-2" name='titulo' value="<?php echo $agenda->getTitulo() ?>" >
+			<label  style="color: #ccc; font-size: 17 ;" class="form-label">Institucion educativa</label>
+			<input type='text' class="form-control mb-2" name='institucion' value="<?php echo $agenda->getInstitucion()?>" >
 			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Fecha graduacion</label>
-			<input type='text' class="form-control mb-2" name='apellidos' value="<?php echo $agenda->getFecha() ?>" >
+			<input type='date' class="form-control mb-2" name='fecha' value="<?php echo $agenda->getFecha() ?>" >
 
 			<hr class="mt-0 mb-0 p-0">
 
 			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Empresa</label>
-			<input type='number' class="form-control mb-2" name='documento' value="<?php echo $agenda->getEmpresa() ?>" >
+			<input type='text' class="form-control mb-2" name='empresa' value="<?php echo $agenda->getEmpresa() ?>" >
 			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Cargo</label>
-			<input type='text' class="form-control mb-2" name='nombre' value="<?php echo $agenda->getCargo()?>" >
+			<input type='text' class="form-control mb-2" name='cargo' value="<?php echo $agenda->getCargo()?>" >
 			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Fecha inicio</label>
-			<input type='text' class="form-control mb-2" name='apellidos' value="<?php echo $agenda->getIni() ?>" >
-			<label for="fecha" style="color: #ccc; font-size: 17 ;" class="form-label">Fecha finalizacion</label>
-			<input type='text' class="form-control mb-2" name='apellidos' value="<?php echo $agenda->getCulmi() ?>" >
+			<input type='date' class="form-control mb-2" name='getIni' value="<?php echo $agenda->getIni() ?>" >
+			<label style="color: #ccc; font-size: 17 ;" class="form-label">Fecha finalizacion</label>
+			<input type='date' class="form-control mb-2" name='getCulmi' value="<?php echo $agenda->getCulmi() ?>" >
 
 			<input type='hidden' name='actualizar' value='actualizar'>
 

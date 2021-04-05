@@ -10,7 +10,7 @@ require_once('conexion.php');
 		// método para insertar, recibe como parámetro un objeto de tipo agenda
 		public function insertar($agenda){
 			$db=Db::conectar();
-			$insert=$db->prepare('INSERT INTO basicos values(NULL,:nombre,:apellidos,:edad,:direccion,:telefono,:documento,:correo)');
+			$insert=$db->prepare('INSERT INTO basicos values(NULL,:nombre,:apellidos,:edad,:direccion,:telefono,:documento,:correo,:titulo,:institucion,:fecha,:empresa,:cargo,:ini,:culmi)');
 			// ,:titulo,:institucion,:fecha,:empresa,:cargo,:ini,:culmi
 			$insert->bindValue('nombre',$agenda->getNombre());
 			$insert->bindValue('apellidos',$agenda->getApellidos());
@@ -19,13 +19,13 @@ require_once('conexion.php');
 			$insert->bindValue('telefono',$agenda->getTelefono());
 			$insert->bindValue('documento',$agenda->getDocumento());
 			$insert->bindValue('correo',$agenda->getCorreo());
-			// $insert->bindValue('titulo',$agenda->getTitulo());
-			// $insert->bindValue('institucion',$agenda->getInstitucion());
-			// $insert->bindValue('fecha',$agenda->getFecha());
-			// $insert->bindValue('empresa',$agenda->getEmpresa());
-			// $insert->bindValue('cargo',$agenda->getCargo());
-			// $insert->bindValue('ini',$agenda->getIni());
-			// $insert->bindValue('culmi',$agenda->getCulmi());
+			$insert->bindValue('titulo',$agenda->getTitulo());
+			$insert->bindValue('institucion',$agenda->getInstitucion());
+			$insert->bindValue('fecha',$agenda->getFecha());
+			$insert->bindValue('empresa',$agenda->getEmpresa());
+			$insert->bindValue('cargo',$agenda->getCargo());
+			$insert->bindValue('ini',$agenda->getIni());
+			$insert->bindValue('culmi',$agenda->getCulmi());
 			$insert->execute();
 		}
  
@@ -46,13 +46,13 @@ require_once('conexion.php');
 				$myAgenda->setTelefono($agenda['telefono']);
 				$myAgenda->setDocumento($agenda['documento']);
 				$myAgenda->setCorreo($agenda['correo']);
-				// $myAgenda->setTitulo($agenda['titulo']);
-				// $myAgenda->setInstitucion($agenda['institucion']);
-				// $myAgenda->setFecha($agenda['fecha']);
-				// $myAgenda->setEmpresa($agenda['empresa']);
-				// $myAgenda->setCargo($agenda['cargo']);
-				// $myAgenda->setIni($agenda['ini']);
-				// $myAgenda->setCulmi($agenda['culmi']);
+				$myAgenda->setTitulo($agenda['titulo']);
+				$myAgenda->setInstitucion($agenda['institucion']);
+				$myAgenda->setFecha($agenda['fecha']);
+				$myAgenda->setEmpresa($agenda['empresa']);
+				$myAgenda->setCargo($agenda['cargo']);
+				$myAgenda->setIni($agenda['ini']);
+				$myAgenda->setCulmi($agenda['culmi']);
 				$listaAgenda[]=$myAgenda;
 			}
 			return $listaAgenda;
@@ -73,12 +73,10 @@ require_once('conexion.php');
 			$db=Db::conectar();
 			$select=$db->prepare('SELECT * FROM basicos WHERE id_basico=:id_basico');
 			$select->bindValue('id_basico',$id);
-			echo("<script> 
-			console.log('hello')
-			</script>");
+			
 			$select->execute();
 			echo("<script> 
-			console.log('23')
+			console.log('hello2')
 			</script>");
 			
 			$agenda=$select->fetch();
@@ -91,20 +89,20 @@ require_once('conexion.php');
 			$myAgenda->setTelefono($agenda['telefono']);
 			$myAgenda->setDocumento($agenda['documento']);
 			$myAgenda->setCorreo($agenda['correo']);
-			// $myAgenda->setTitulo($agenda['titulo']);
-			// $myAgenda->setInstitucion($agenda['institucion']);
-			// $myAgenda->setFecha($agenda['fecha']);
-			// $myAgenda->setEmpresa($agenda['empresa']);
-			// $myAgenda->setCargo($agenda['cargo']);
-			// $myAgenda->setIni($agenda['ini']);
-			// $myAgenda->setCulmi($agenda['culmi']);
+			$myAgenda->setTitulo($agenda['titulo']);
+			$myAgenda->setInstitucion($agenda['institucion']);
+			$myAgenda->setFecha($agenda['fecha']);
+			$myAgenda->setEmpresa($agenda['empresa']);
+			$myAgenda->setCargo($agenda['cargo']);
+			$myAgenda->setIni($agenda['ini']);
+			$myAgenda->setCulmi($agenda['culmi']);
 			return $myAgenda;
 		}
  
 		// método para actualizar agenda un amigo, recibe como parámetro un amigo
 		public function actualizar($agenda){
 			$db=Db::conectar();
-			$actualizar=$db->prepare('UPDATE basicos SET nombre=:nombre, apellidos=:apellidos, edad=:edad, direccion=:direccion,telefono=:telefono, documento=:documento, correo=:correo  WHERE id_basico=:id_basico');
+			$actualizar=$db->prepare('UPDATE basicos SET nombre=:nombre, apellidos=:apellidos, edad=:edad, direccion=:direccion,telefono=:telefono, documento=:documento, correo=:correo , titulo=:titulo, institucion=:institucion, fecha=:fecha, empresa=:empresa, cargo=:cargo, ini=:ini, culmi=:culmi  WHERE id_basico=:id_basico');
 			// , titulo=:titulo, institucion=:institucion, fecha=:fecha, empresa=:empresa, cargo=:cargo, ini=:ini, culmi=:culmi
 			$actualizar->bindValue('id_basico',$agenda->getId());
 			$actualizar->bindValue('nombre',$agenda->getNombre());
@@ -114,13 +112,17 @@ require_once('conexion.php');
 			$actualizar->bindValue('telefono',$agenda->getTelefono());
 			$actualizar->bindValue('documento',$agenda->getDocumento());
 			$actualizar->bindValue('correo',$agenda->getCorreo());
-			// $actualizar->bindValue('titulo',$agenda->getTitulo());
-			// $actualizar->bindValue('institucion',$agenda->getInstitucion());
-			// $actualizar->bindValue('fecha',$agenda->getFecha());
-			// $actualizar->bindValue('empresa',$agenda->getEmpresa());
-			// $actualizar->bindValue('cargo',$agenda->getCargo());
-			// $actualizar->bindValue('ini',$agenda->getIni());
-			// $actualizar->bindValue('culmi',$agenda->getCulmi());
+			$actualizar->bindValue('titulo',$agenda->getTitulo());
+			$actualizar->bindValue('institucion',$agenda->getInstitucion());
+			$actualizar->bindValue('fecha',$agenda->getFecha());
+			$actualizar->bindValue('empresa',$agenda->getEmpresa());
+			$actualizar->bindValue('cargo',$agenda->getCargo());
+			$actualizar->bindValue('ini',$agenda->getIni());
+			$actualizar->bindValue('culmi',$agenda->getCulmi());
+
+			echo("<script> 
+			console.log('hello')
+			</script>");
 			$actualizar->execute();
 		}
 	}

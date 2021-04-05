@@ -22,7 +22,12 @@ $listaAgenda=$crud->mostrar();
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/owl.theme.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
 
     <!-- google   fonts - stilos de letras -->
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600&display=swap" rel="stylesheet" />
@@ -32,6 +37,20 @@ $listaAgenda=$crud->mostrar();
 </head>
 
 <body class="container bg-dark">
+
+<!-- Preloader -->
+<div class="preloader-outer">
+	<div class="preloader">
+		<div class="lines">
+			<div class="line line-1"></div>
+			<div class="line line-2"></div>
+			<div class="line line-3"></div>
+		</div>
+
+		<div class="loading-text"> Curriculum </div>
+	</div>
+</div>
+<!-- Preloader end -->
 
 <div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -44,7 +63,7 @@ $listaAgenda=$crud->mostrar();
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container justify-content-center">
-				<p class="navbar-brand fs-2 m-0">Datos Básicos</p>
+				<p class="navbar-brand fs-5 m-0">Datos básicos</p>
 			</div>
 		</nav>
 	</div>
@@ -78,25 +97,34 @@ $listaAgenda=$crud->mostrar();
 				<td><?php echo $agenda->getDireccion() ?></td>
 				<td><?php echo $agenda->getTelefono() ?></td>
 				<td><?php echo $agenda->getCorreo() ?></td>
-				<td class="text-center">
-				<a class="btn btn-secondary" href="more.php?id=<?php echo $agenda->getId()?>&accion=a"><i class="fas fa-eye" ></i></a></td>
-				<td class="text-center">
-				<a class="btn btn-secondary" href="actualizar.php?id=<?php echo $agenda->getId()?>&accion=a"><i class="fas fa-pen-square" ></i></a></td>
-				<td class="text-center">
-				<a class="btn btn-secondary"href="administrar_agenda.php?id=<?php echo $agenda->getId()?>&accion=e"><i class="fas fa-trash-alt"></i></a></td>
+				<td class="text-center"><a class="btn btn-secondary" href="more.php?id=<?php echo $agenda->getId()?>&accion=a"><i class="fas fa-eye" ></i></a></td>
+				<td class="text-center"><a class="btn btn-secondary" href="actualizar.php?id=<?php echo $agenda->getId()?>&accion=a"><i class="fas fa-pen-square" ></i></a></td>
+				<td class="text-center"><a class="btn btn-secondary" href="administrar_agenda.php?id=<?php echo $agenda->getId()?>&accion=e"><i class="fas fa-trash-alt"></i></a></td>
 			</tr>
+			<?php }?>
 		</tbody>
 
-			<?php }?>
+			
 		</table>
 	</div>
-	<div class="d-grid gap-1 mt-4">
+	<div class="d-grid gap-2 mt-4">
 		<a href="index.php" class="btn btn-danger" type="button">Volver</a>
 	</div>
+	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js " integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin=" anonymous "></script>
+	<script type="text/javascript" src="assets/js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.onepage-scroll.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.filterizr.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="assets/js/smoothscroll.min.js"></script>
 </body>
 
 </html>
