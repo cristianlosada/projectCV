@@ -26,16 +26,16 @@
 
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
-	
-
-	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
 <body style="    background-color: #cacaca;">
+
+<div id="imprimir">
+
+
+      
+
 <!-- Preloader -->
 <div class="preloader-outer">
 	<div class="preloader">
@@ -186,6 +186,8 @@
 
 		</section>
 		<!-- Section Resume end -->
+
+
 		
 		
 
@@ -199,6 +201,12 @@
 <!-- Main Wrapper end -->
 
 <!-- SCRIPTS -->
+</div>
+
+<input type="button" onclick="printDiv('imprimir')" value="imprimir div" />
+
+
+
 <script type="text/javascript" src="assets/js/jquery-1.12.3.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.onepage-scroll.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
@@ -209,6 +217,19 @@
 <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/custom.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.min.js"></script>
+<script>
+	function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
+
 
 </body>
 </html>
