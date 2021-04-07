@@ -203,7 +203,7 @@
 <!-- SCRIPTS -->
 </div>
 
-<input type="button" onclick="printDiv('imprimir')" value="imprimir div" />
+<input class="btn btn-secondary"  type="button" onclick="printDiv('imprimir')" value="imprimir Curriculum en PDF" />
 
 
 

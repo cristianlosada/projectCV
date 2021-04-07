@@ -46,10 +46,9 @@
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 		<main role="main" class="inner cover">
     <a style=" text-decoration: none;" href="index.php"><h1 class="cover-heading" style="color: #ccc;" > Curriculum Vitae.</h1></a>
-	<td class="text-center"><a class="btn btn-secondary" href="crearPdf.php?id=<?php echo $agenda->getId()?>&accion=a"><i class="fa fa-download" aria-hidden="true"> </i>  Download Curriculum</a>
+	<td class="text-center"><a class="btn btn-secondary" href="curriculum.php?id=<?php echo $agenda->getId()?>&accion=a"><i class="fa fa-eye" aria-hidden="true"> </i>  View Curriculum</a>
 
 </td>
-<td class="text-center"><a class="btn btn-secondary" href="curriculum.php?id=<?php echo $agenda->getId()?>&accion=a"><i class="fa fa-download" aria-hidden="true"> </i>  Download Curriculum</a>
 
 </td>
     </main>
