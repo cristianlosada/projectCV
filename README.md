@@ -2,7 +2,7 @@
 
 
 - Cristian Alejandro Lozada Reyes
-- Simon 
+-  Simón Jiménez Tamayo
 
 ~~~
 se presenta la primera fase del proyecto de PHP de la creacion del curriculum vitae en donde
